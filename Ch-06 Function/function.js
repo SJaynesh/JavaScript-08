@@ -28,7 +28,17 @@ console.log("Hello Function...");
  *              }
  *                  
  *      3. TNRS (Take Nothing and Return Something) :
+ *          
+ *           Syntax :
+ *              function functionName() {
+ *                  return value/variable;
+ *              }
  *      4. TSRS (Take Something and Return Something) :
+ * 
+ *          Syntax : 
+ *              function functionName(parameters) {
+ *                  return value / variable;
+ *              }
  */
 
 
@@ -41,6 +51,7 @@ function printMultipleLog() {
     console.log("Hello 5");
 }
 
+
 // TSRN
 function loginWithEmailAndPassword(email, password) {
     if (!email || !password) {
@@ -52,9 +63,29 @@ function loginWithEmailAndPassword(email, password) {
     console.log("Password : ", password);
 }
 
+// TNRS
+function addition() {
+    let a = +prompt("Enter first number : ");
+    let b = +prompt("Enter second number : ");
+
+    return a + b;
+    console.log(a + b);
+}
+
+// TSRS
+function square(num) {
+    return num * num;
+}
+
+
+
+
 // Called
 printMultipleLog();
 loginWithEmailAndPassword("abc@gmail.com", "Abc@1234"); // argument Pass
+console.log("Addition : ", addition());
+console.log(`Square : ${square(120)}`);
+
 
 
 
