@@ -23,6 +23,8 @@
 let list = [10, 20, 30, 40, 50, "Hello", 50, false, [1, 2, 3], 3.14, 56.12];
 //          0   1   2   3   4    5        6      7         8   9     10
 
+
+
 // console.log("Array Length is ", list.length);
 
 // const sliceArray = list.slice(1, 4);
@@ -92,5 +94,5 @@ console.log(Array.isArray(myAges)); // false
 
 const myNameArray = Array.from("Jaynesh");
 
-console.log(myNameArray);
+console.log(myNameArray);// ['j' , 'a', ]
 

@@ -1,5 +1,7 @@
 let myArray = new Array(10, 20, 30, 40, 3.14, 45.63);
 
+// [ud, ud, ud, 40, ud, 45]
+
 // ForEach() Method:
 
 // myArray.forEach((element, index) => {
@@ -19,7 +21,7 @@ let myArray = new Array(10, 20, 30, 40, 3.14, 45.63);
 // console.log(finalArray);
 
 // Find() Method :
-// const findValue = myArray.find((element) => element === 400);
+// const findValue = myArray.find((element) => element === 40);
 
 // console.log(findValue); // 40
 
@@ -30,7 +32,6 @@ const filterArray = myArray.filter((element, index) => {
     }
 });
 
-console.log(filterArray);
-
+console.log(filterArray);// [40,45]
 
 
