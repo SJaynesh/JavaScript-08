@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
+
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: orange;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,7 +22,23 @@
     <!-- <button onclick="alert('btn is clicked...')">Click me</button> -->
     <button id="btn_submit">Click me</button>
 
-    <script src="script.js"></script>
+    <button id="btn_dbl">Double Click me</button>
+
+
+    <div class="box"></div>
+
+
+    <div>
+
+        <p id="qty">15</p>
+
+        <button class="increment">+</button>
+        <button class="reset">Reset</button>
+        <button class="decrement">-</button>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="btn.js"></script>
 </body>
 
 </html>
