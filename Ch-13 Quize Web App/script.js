@@ -27,13 +27,29 @@ let allQuestions = [
 ];
 
 const question = document.getElementById('question');
+const index = document.getElementById('index');
 const options = document.querySelectorAll('span');
 const nextBtn = document.getElementById('nextBtn');
+const timer = document.getElementById('timer');
 
-
+let second = 60;
+let timerInterval = null;
 
 let currentIndex = 0
 function loadQuestion() {
+
+    // 5 >= 5
+    if (currentIndex >= allQuestions.length) {
+        clearInterval(timerInterval);
+        alert("Quize Submitted...")
+        timer.textContent = "00:00";
+        return;
+    }
+
+    startTimer();
+
+    index.textContent = currentIndex + 1;
+
     const currentQuestion = allQuestions[currentIndex];
 
     question.textContent = currentQuestion.question;
@@ -42,21 +58,32 @@ function loadQuestion() {
         span.textContent = currentQuestion.options[index];
     })
 
-    currentIndex++;
-}
-
-nextBtn.addEventListener('click', () => {
-
     if (currentIndex === 4) {
         nextBtn.textContent = "Submit";
         nextBtn.style.backgroundColor = "green";
     }
+}
 
-    if (currentIndex < allQuestions.length) {
-        loadQuestion();
-    } else {
-        alert("Quize Submitted...");
-    }
-});
+nextBtn.addEventListener('click', nextQuestion);
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        second--;
+
+        if (second == 0) {
+            nextQuestion();
+        }
+
+        let ss = second < 10 ? `0${second}` : second;
+        timer.textContent = `00:${ss}`;
+    }, 100);
+}
+
+function nextQuestion() {
+    clearInterval(timerInterval);
+    second = 60;
+    currentIndex++;
+    loadQuestion();
+}
 
 loadQuestion();
