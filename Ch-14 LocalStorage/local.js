@@ -1,6 +1,5 @@
 const username = document.getElementById('username');
 
-
 document.getElementById('addBtn').addEventListener('click', () => {
     console.log(username.value);
 
