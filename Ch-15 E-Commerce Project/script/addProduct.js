@@ -13,6 +13,7 @@ function onFormSubmit(event) {
     const p_desc = document.getElementById('p_desc').value;
 
     const product = {
+        p_id: Date.now(),
         p_name,
         p_price,
         p_stock,
@@ -30,4 +31,6 @@ function onFormSubmit(event) {
     document.getElementById('p_stock').value = "";
     document.getElementById('p_image').value = "";
     document.getElementById('p_desc').value = "";
+
+    alert("Product added successfully...")
 }

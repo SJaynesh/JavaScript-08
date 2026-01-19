@@ -19,23 +19,27 @@ function renderTable() {
                         <td><img src=${product.p_image}
                                 alt="" width="80"></td>
                         <td>
-                            <button class="btn btn-warning" onclick="editProduct(${index})">Edit</button>
+                            <button class="btn btn-warning" onclick="editProduct(${product.p_id})">Edit</button>
                         </td>
                         <td>
-                            <button class="btn btn-danger" onclick="deleteProduct(${index})" >Delete</button>
+                            <button class="btn btn-danger" onclick="deleteProduct(${product.p_id})" >Delete</button>
                         </td>
                     </tr>`;
     });
 }
 
 // Delete Product Logic
-function deleteProduct(index) {
-    alert("Deleted..." + index);
-    allProducts.splice(index, 1);
+function deleteProduct(id) {
+    // alert("Deleted..." + index);
+    // allProducts.splice(index, 1);
+
+    allProducts = allProducts.filter((product) => product.p_id !== id);
 
     localStorage.setItem('products', JSON.stringify(allProducts));
 
     renderTable();
+
+    alert("Product deleted successfully...");
 
     // let array = ["10", "20", "30", "40", "50"];
     // let myIndex = "40";
@@ -48,7 +52,7 @@ function deleteProduct(index) {
 }
 
 // Edit Product
-function editProduct(index) {
-    localStorage.setItem("editIndex", index);
+function editProduct(id) {
+    localStorage.setItem("editId", id);
     window.location.href = "editProductPage.html";
 }
