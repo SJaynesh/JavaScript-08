@@ -1,13 +1,31 @@
 let allProducts = JSON.parse(localStorage.getItem('products') || "[]");
+let addToCartProducts = JSON.parse(localStorage.getItem('addToCart') || "[]");
+
+let filterProducts = [...allProducts];
 
 const tbody = document.getElementById('t-body');
+document.getElementById('cart').innerText = `Cart (${addToCartProducts.length})`;
+
+const searchProduct = document.getElementById('searchProduct');
+
+searchProduct.addEventListener('keyup', (e) => {
+    console.log(e.target.value);
+    let search = e.target.value.toLowerCase();
+
+    filterProducts = allProducts.filter((product) => product.p_name.toLowerCase().includes(search));
+
+    console.log(filterProducts);
+
+    renderTable(filterProducts);
+
+});
 
 renderTable();
 
-function renderTable() {
+function renderTable(products = allProducts) {
     tbody.innerHTML = "";
 
-    allProducts.forEach((product, index) => {
+    products.forEach((product, index) => {
         tbody.innerHTML += `<tr>
                         <th scope="row">${index + 1}</th>
                         <td>${product.p_name}</td>
@@ -28,6 +46,17 @@ function renderTable() {
     });
 }
 
+function priceAsc() {
+    filterProducts.sort((a, b) => Number(a.p_price) - Number(b.p_price));
+
+    renderTable(filterProducts);
+}
+
+function priceDes() {
+    filterProducts.sort((a, b) => Number(b.p_price) - Number(a.p_price));
+
+    renderTable(filterProducts);
+}
 // Delete Product Logic
 function deleteProduct(id) {
     // alert("Deleted..." + index);

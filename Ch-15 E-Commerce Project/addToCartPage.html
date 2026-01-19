@@ -32,7 +32,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active " aria-current="page" href="addToCartPage.html">Cart</a>
+                        <a class="nav-link active " aria-current="page" href="addToCartPage.html"><span id="cart">Cart
+                            </span></a>
                     </li>
 
                 </ul>
@@ -47,10 +48,33 @@
     <div class="container-fluid">
         <div class="container">
             <div class="mt-5">
-                <h1 class="text-center">Add To Cart Page</h1>
+                <h1 class="text-center">Add To Cart</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col"> Price</th>
+                                    <th scope="col"> Image</th>
+                                    <th scope="col" colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="t-body">
+                            </tbody>
+
+                            <tfoot id="t-foot">
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="script/addToCart.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

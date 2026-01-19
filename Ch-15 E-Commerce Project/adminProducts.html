@@ -32,7 +32,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/addToCartPage.html">Cart</a>
+                        <a class="nav-link " aria-current="page" href="/addToCartPage.html"><span id="cart">Cart
+                            </span></a>
                     </li>
 
 
@@ -50,6 +51,17 @@
             <div class="mt-5">
                 <h1 class="text-center">Admin Products</h1>
                 <div class="row">
+                    <div class="col-6 mt-5">
+                        <div class="mb-3 ">
+                            <input type="search" class="form-control" id="searchProduct"
+                                placeholder="Search any product" required>
+                            <small style="color: red;"></small>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-5">
+                        <button class="btn btn-success" onclick="priceAsc()">Price Asc</button>
+                        <button class="btn btn-info" onclick="priceDes()">Price Des</button>
+                    </div>
                     <div class="col-12">
                         <table class="table table-striped">
                             <thead>

@@ -6,7 +6,7 @@ const row = document.getElementById('row');
 viewAllProducts();
 
 function viewAllProducts() {
-    document.getElementById('cart').innerText = `Cart (${addToCartProduct.length === 0 ? "" : addToCartProduct.length})`;
+    document.getElementById('cart').innerText = `Cart (${addToCartProduct.length})`;
     row.innerHTML = "";
     allProducts.forEach((product, index) => {
         const addedInCart = addToCartProduct.find((element) => element.p_id === product.p_id);

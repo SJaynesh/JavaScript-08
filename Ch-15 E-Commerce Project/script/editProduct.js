@@ -33,7 +33,7 @@ function onFormSubmit(event) {
     console.log(editProduct);
 
     allProducts = allProducts.map((element) => {
-        if (element.p_id === editId) {
+        if (element.p_id === editId) { // 103 === 103
             return editProduct;
         } else {
             return element;
